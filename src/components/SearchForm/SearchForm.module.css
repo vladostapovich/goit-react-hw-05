@@ -1,0 +1,16 @@
+.searchBtn {
+  border: 1px solid black;
+  padding: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 0px;
+}
+.search {
+  border: 1px solid black;
+  padding: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 15px;
+}
