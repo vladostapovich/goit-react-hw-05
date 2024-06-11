@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 
 import css from "./MovieDetailsPage.module.css";
@@ -8,7 +8,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
   const location = useLocation();
-  const backLink = location.state?.from ?? "/movies";
+  const backLink = useRef(location.state?.from ?? "/");
 
   useEffect(() => {
     axiosInit
@@ -51,14 +51,14 @@ const MovieDetailsPage = () => {
         </div>
       </div>
 
-      <ul className={css.links}>
+      <ul>
         <li>
-          <Link to="cast" state={{ from: backLink }} className={css.linkTo}>
+          <Link to="cast" state={{ from: backLink }}>
             Cast
           </Link>
         </li>
         <li>
-          <Link to="reviews" state={{ from: backLink }} className={css.linkTo}>
+          <Link to="reviews" state={{ from: backLink }}>
             Reviews
           </Link>
         </li>
